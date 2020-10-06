@@ -62,7 +62,7 @@ jobs:
 
 workflows:
     version: 2.1
-    build-test-deploy:
+    build-deploy:
         jobs:
             - prepare-dependencies
             - build-production:
@@ -72,9 +72,6 @@ workflows:
                   context: docker-hub
                   requires:
                       - build-production
-            - test:
-                  requires:
-                      - prepare-dependencies
             - deploy-docker-image:
                   context: docker-hub
                   requires:
