@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-    docker: circleci/docker@1.0.1
-
 jobs:
     prepare-dependencies:
         docker:
@@ -117,7 +114,7 @@ jobs:
                   registry: $DOCKER_REGISTRY
 
 workflows:
-    version: 2
+    version: 2.1
     build-test-deploy:
         jobs:
             - prepare-dependencies
