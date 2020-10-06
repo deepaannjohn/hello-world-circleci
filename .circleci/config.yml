@@ -58,6 +58,9 @@ jobs:
                   name: Setup __BUILD_VERSION envvar
                   command: |
                       echo "export __BUILD_VERSION=\"$(cat version.txt)\"" >> $BASH_ENV
+            - run:
+                  name: Print __BUILD_VERSION
+                  command: echo $__BUILD_VERSION
 
 
     deploy-docker-image:
@@ -79,6 +82,9 @@ jobs:
                   name: Setup __BUILD_VERSION envvar
                   command: |
                       echo "export __BUILD_VERSION=\"$(cat version.txt)\"" >> $BASH_ENV
+            - run:
+                  name: Print __BUILD_VERSION
+                  command: echo $__BUILD_VERSION
 
 workflows:
     version: 2.1
