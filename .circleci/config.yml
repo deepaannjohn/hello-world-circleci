@@ -29,9 +29,9 @@ jobs:
                   name: Production build
                   command: |
                       export __BUILD_VERSION="$(cat version.txt)"
-            - run: echo "my production build" > dist/server.js
+            - run: echo "my production build" > dist/prod-build
             - store_artifacts:
-                  path: dist/server.js
+                  path: dist/prod-build
             - persist_to_workspace:
                   root: .
                   paths:
