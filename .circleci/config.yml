@@ -32,6 +32,9 @@ jobs:
             - run:
                   name: Version Number
                   command: echo $(cat version.txt)
+            - run:
+                  name: Build Number
+                  command: echo $CIRCLE_BUILD_NUM
             - store_artifacts:
                 path: .
             - persist_to_workspace:
