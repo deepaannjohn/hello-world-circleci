@@ -100,7 +100,11 @@ workflows:
             - build-docker-image:
                   requires:
                       - build-production
-            - deploy-docker-image:
+            - hold:
+                  type: approval
                   requires:
                       - build-docker-image
+            - deploy-docker-image:
+                  requires:
+                      - hold
 
